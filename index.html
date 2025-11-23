@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Letter Display</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 200px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="letter"></div>
+
+<script>
+    document.addEventListener("keydown", function(event) {
+        let key = event.key;
+
+        // Only show A–Z or a–z
+        if (key.length === 1 && key.match(/[a-zA-Z]/)) {
+            document.getElementById("letter").textContent = key.toUpperCase();
+        }
+    });
+</script>
+
+</body>
+</html>
